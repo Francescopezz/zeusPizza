@@ -52,6 +52,64 @@
         margin-right: auto;
       }
     }
+/* Contenitore per immagine e didascalia */
+.image-caption-container {
+  display: flex;
+  align-items: center;
+  height: 500px; /* Altezza fissa per il contenitore */
+  border-radius: 10px;
+  overflow: hidden; /* Nasconde eventuali eccessi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+.caption {
+  width: 35%; /* Occupare il 35% della larghezza della pagina */
+  background-color: red;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box; /* Include il padding nel calcolo della larghezza totale */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente il testo */
+  text-align: center; /* Centra il testo orizzontalmente */
+  font-family: 'Arial', sans-serif;
+}
+
+.caption h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Aggiunge un'ombra al testo */
+}
+
+.caption p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.image {
+  width: 65%; /* Occupare il 65% della larghezza della pagina */
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene le proporzioni e riempie l'altezza */
+  display: block; /* Rimuove lo spazio sotto l'immagine */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; /* Arrotonda gli angoli dell'immagine */
+}
+
+/* Stili per il contenitore della tabella */
+.container {
+  position: relative;
+  z-index: 1; /* Assicurati che la tabella sia sopra l'immagine di sfondo */
+}
+
 
 /* Stili generali per la tabella */
 .table {
@@ -217,6 +275,15 @@
   </div>
 </nav>
 
+<div class="image-caption-container">
+  <div class="caption">
+    <h1>La Tua Didascalia</h1>
+    <p>Descrizione dell'immagine con sfondo rosso e testo bianco.</p>
+  </div>
+  <div class="image">
+    <img src="img/sfondo.jpg" alt="Hero Image">
+  </div>
+</div>
 
 <div class="container mt-5">
   <h2 class="text-center mb-4">Orari di Apertura</h2>
