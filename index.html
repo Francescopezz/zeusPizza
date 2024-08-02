@@ -53,17 +53,47 @@
       }
     }
 
-    .table th {
-      background-color: #d9534f; /* Colore rosso per le intestazioni */
-      color: white;
-    }
-    .table td, .table th {
-      text-align: center;
-      vertical-align: middle;
-    }
-    .red-text {
-      color: #d9534f; /* Colore rosso per le X */
-    }
+/* Stili generali per la tabella */
+.table {
+  border-collapse: collapse; /* Rimuove gli spazi tra le celle */
+  width: 100%; /* Assicura che la tabella occupi tutta la larghezza disponibile */
+  margin: 0 auto; /* Centra la tabella */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transizione per animazioni */
+}
+
+/* Stili per le intestazioni */
+.table thead th {
+  background-color: #d9534f; /* Colore di sfondo delle intestazioni */
+  color: white; /* Colore del testo delle intestazioni */
+  padding: 10px; /* Spaziatura interna */
+  text-align: center; /* Allinea il testo al centro */
+  border: 1px solid #ddd; /* Colore del bordo delle celle */
+  transition: background-color 0.3s ease; /* Transizione per cambiamenti di colore */
+}
+
+/* Stili per le righe */
+.table tbody tr {
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transizioni per effetti hover */
+}
+
+/* Stili per le celle */
+.table td, .table th {
+  padding: 10px; /* Spaziatura interna */
+  border: 1px solid #ddd; /* Colore del bordo delle celle */
+  text-align: center; /* Allinea il testo al centro */
+}
+
+/* Effetto hover per le righe */
+.table tbody tr:hover {
+  background-color: #f2f2f2; /* Colore di sfondo al passaggio del mouse */
+  transform: translateY(-2px); /* Leggera animazione al passaggio del mouse */
+}
+
+/* Colore rosso per le celle con la X */
+.red-text {
+  color: #d9534f; /* Colore rosso per le celle con la X */
+}
+
 
     .contact-info {
       padding: 20px;
@@ -71,34 +101,84 @@
     }
     .contact-info .phone-number {
       font-size: 1.2rem;
-    }
-    .card {
-      height: 100%;
-    }
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .map-container iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-    }
-    .btn-primary {
-  background-color: red;
-  color: white;
-  border: 1px solid white;
-  font-size: 0.875rem; /* Dimensione del testo del pulsante */
-  padding: 0.5rem 1rem; /* Padding per il pulsante */
-  line-height: 1.5; /* Altezza della linea per il pulsante */
-  border-radius: 0.25rem; /* Raggio del bordo per il pulsante */
-  display: inline-block; /* Mostra il pulsante come elemento inline-block */
+    }/* Card generale */
+/* Stili generali per le card */
+.card {
+  border: 1px solid #ddd; /* Colore del bordo delle card */
+  border-radius: 15px; /* Bordi arrotondati */
+  overflow: hidden; /* Nasconde il contenuto che esce dai bordi arrotondati */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra alle card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge transizioni per effetti hover */
+  display: flex;
+  flex-direction: column; /* Assicura che il contenuto della card si disponga in colonna */
 }
-    .btn-primary:hover {
-      background-color: darkred; /* Colore quando si passa sopra */
-      border-color: darkred; /* Colore del bordo quando si passa sopra */
-    }
+
+/* Effetto hover per le card */
+.card:hover {
+  transform: scale(1.03); /* Ingrandisce leggermente la card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta l'ombra della card */
+}
+
+/* Al di sopra di tutte le card */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Assicura che il contenuto sia distribuito uniformemente */
+  text-align: center;
+  padding: 20px; /* Spaziatura interna */
+  flex-grow: 1; /* Permette alla card di crescere e occupare spazio disponibile */
+  transition: background-color 0.3s ease; /* Aggiunge una transizione al colore di sfondo */
+}
+
+/* Effetto hover per il background del card body */
+.card:hover .card-body {
+  background-color: #f8f9fa; /* Colore di sfondo più chiaro al passaggio del mouse */
+}
+
+/* Immagine del titolo sulla card dei contatti */
+.card .text {
+  margin-bottom: 15px; /* Spaziatura sotto l'immagine del titolo */
+}
+
+.card .text img {
+  max-width: 100%; /* Assicura che l'immagine non superi la larghezza della card */
+  height: auto; /* Mantiene le proporzioni corrette */
+  transition: transform 0.3s ease; /* Transizione per l'effetto hover */
+}
+
+/* Effetto hover per l'immagine del titolo */
+.card:hover .text img {
+  transform: scale(1.05); /* Ingrandisce leggermente l'immagine del titolo */
+}
+
+/* Contenitore della mappa */
+.map-container {
+  width: 100%;
+  height: 300px; /* Altezza della mappa */
+  border-radius: 15px; /* Bordi arrotondati */
+  overflow: hidden; /* Nasconde il contenuto che esce dai bordi arrotondati */
+  margin-top: 15px;
+  transition: transform 0.3s ease; /* Transizione per l'effetto hover */
+}
+
+/* Pulsante */
+.btn-primary {
+  padding: 8px 16px; /* Aumenta il padding del bottone per maggiore comodità */
+  font-size: 14px; /* Dimensione del font del pulsante */
+  line-height: 1.5; /* Altezza della linea per il pulsante */
+  border-radius: 25px; /* Raggio del bordo per il pulsante */
+  background-color: #d9534f; /* Colore di sfondo del pulsante */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Aggiunge transizioni per effetti hover */
+}
+
+/* Effetto hover per il pulsante */
+.btn-primary:hover {
+  background-color: #c9302c; /* Colore di sfondo quando si passa sopra */
+  transform: scale(1.05); /* Ingrandisce leggermente il pulsante */
+}
+
 
   </style>
 </head>
@@ -136,85 +216,92 @@
     </ul>
   </div>
 </nav>
+
+
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Orari di Apertura</h2>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Giorno</th>
-          <th>Pranzo</th>
-          <th>Cena</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th class="bg-danger text-white">Lunedì</th>
-          <td class="red-text">X</td>
-          <td>18:00 - 22:00</td>
-        </tr>
-        <tr>
-          <th class="bg-danger text-white">Martedì</th>
-          <td class="red-text">X</td>
-          <td>18:00 - 22:00</td>
-        </tr>
-        <tr>
-          <th class="bg-danger text-white">Mercoledì</th>
-          <td>12:00 - 14:00</td>
-          <td>18:00 - 22:00</td>
-        </tr>
-        <tr>
-          <th class="bg-danger text-white">Giovedì</th>
-          <td>12:00 - 14:00</td>
-          <td>18:00 - 22:00</td>
-        </tr>
-        <tr>
-          <th class="bg-danger text-white">Venerdì</th>
-          <td>12:00 - 14:00</td>
-          <td>18:00 - 22:00</td>
-        </tr>
-        <tr>
-          <th class="bg-danger text-white">Sabato</th>
-          <td>12:00 - 14:00</td>
-          <td>18:00 - 22:00</td>
-        </tr>
-        <tr>
-          <th class="bg-danger text-white">Domenica</th>
-          <td>12:00 - 14:00</td>
-          <td>18:00 - 22:00</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <h2 class="text-center mb-4">Orari di Apertura</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Giorno</th>
+        <th>Pranzo</th>
+        <th>Cena</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="bg-danger text-white">Lunedì</th>
+        <td class="red-text">X</td>
+        <td>18:00 - 22:00</td>
+      </tr>
+      <tr>
+        <th class="bg-danger text-white">Martedì</th>
+        <td class="red-text">X</td>
+        <td>18:00 - 22:00</td>
+      </tr>
+      <tr>
+        <th class="bg-danger text-white">Mercoledì</th>
+        <td>12:00 - 14:00</td>
+        <td>18:00 - 22:00</td>
+      </tr>
+      <tr>
+        <th class="bg-danger text-white">Giovedì</th>
+        <td>12:00 - 14:00</td>
+        <td>18:00 - 22:00</td>
+      </tr>
+      <tr>
+        <th class="bg-danger text-white">Venerdì</th>
+        <td>12:00 - 14:00</td>
+        <td>18:00 - 22:00</td>
+      </tr>
+      <tr>
+        <th class="bg-danger text-white">Sabato</th>
+        <td>12:00 - 14:00</td>
+        <td>18:00 - 22:00</td>
+      </tr>
+      <tr>
+        <th class="bg-danger text-white">Domenica</th>
+        <td>12:00 - 14:00</td>
+        <td>18:00 - 22:00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
 <hr class="hr hr-blurry" style="background-color: red;" />
 
 <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <!-- Card per i numeri di telefono -->
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Contatti</h4>
-            <p class="phone-number"><i class="fas fa-phone-alt"></i> <a href="tel:+0418222570">+041 822 2570</a></p>
-            <p class="phone-number"><i class="fas fa-phone-alt"></i> <a href="tel:+393454690469">+39 345 469 0469</a></p>
-            <a href="https://search.google.com/local/writereview?placeid=ChIJmfI9UMfMfkcRi6S0FwOkTTQ" class="btn btn-primary rounded-pill">Inserisci una recensione</a>
-          </div>
+  <h2 class="text-center contact-title">Contatti e Mappa</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <!-- Card per i numeri di telefono -->
+      <div class="card">
+        <div class="card-body">
+          <span class="text">
+            <img src="img/titolo.png" alt="Titolo">
+          </span>
+          <h4 class="card-title">Contatti</h4>
+          <p class="phone-number"><i class="fas fa-phone-alt"></i> <a href="tel:+0418222570">+041 822 2570</a></p>
+          <p class="phone-number"><i class="fas fa-phone-alt"></i> <a href="tel:+393454690469">+39 345 469 0469</a></p>
+          <a href="https://search.google.com/local/writereview?placeid=ChIJmfI9UMfMfkcRi6S0FwOkTTQ" class="btn btn-primary rounded-pill">Inserisci una recensione</a>
         </div>
       </div>
-      <div class="col-md-6 mb-4">
-        <!-- Card per la mappa -->
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Dove Siamo</h4>
-            <!-- Mappa di Google Maps -->
-            <div class="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6330.259350260697!2d12.077369700716321!3d45.5529508540557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eccc7503df299%3A0x344da40317b4a48b!2sZeus%20Pizza!5e0!3m2!1sit!2sit!4v1722614914993!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-          </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <!-- Card per la mappa -->
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Dove Siamo</h4>
+          <!-- Mappa di Google Maps -->
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d178800.9464219156!2d12.07211!3d45.555057!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eccc7503df299%3A0x344da40317b4a48b!2sZeus%20Pizza!5e0!3m2!1sit!2sit!4v1722623520348!5m2!1sit!2sit" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
 <footer class="footer text-center">
   <!-- Grid container -->
@@ -244,7 +331,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: #c9302c;">
     © 2024 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">ZeusPizzaNoale</a>
+    <a class="text-white" href="">ZeusPizzaNoale</a>
   </div>
   <!-- Copyright -->
 </footer>
