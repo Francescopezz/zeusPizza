@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .navbar-brand img {
+      height: 40px; /* Altezza del logo */
+    }
+    .navbar-center img {
+      height: 40px; /* Altezza del titolo */
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .navbar-collapse {
+      flex-grow: 0; /* Mantiene la dimensione del menu senza allargare la navbar */
+    }
+    .footer {
+      margin-top: auto;
+      background-color: whitesmoke; /* Colore rosso */
+      color: white; /* Testo bianco */
+    }
+    .footer .btn-floating {
+      border-radius: 50%; /* Icone tonde */
+    }
+    .footer-logo img {
+      height: 40px; /* Altezza del logo nel footer */
+    }
+    @media (max-width: 991.98px) {
+      .navbar-center {
+        position: static;
+        transform: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .table th {
+      background-color: #d9534f; /* Colore rosso per le intestazioni */
+      color: white;
+    }
+    .table td, .table th {
+      text-align: center;
+      vertical-align: middle;
+    }
+    .red-text {
+      color: #d9534f; /* Colore rosso per le X */
+    }
+
+    .contact-info {
+      padding: 20px;
+      background-color: #f8f9fa; /* Colore di sfondo per il contenitore dei contatti */
+    }
+    .contact-info .phone-number {
+      font-size: 1.2rem;
+    }
+    .card {
+      height: 100%;
+    }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+    .btn-primary {
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  font-size: 0.875rem; /* Dimensione del testo del pulsante */
+  padding: 0.5rem 1rem; /* Padding per il pulsante */
+  line-height: 1.5; /* Altezza della linea per il pulsante */
+  border-radius: 0.25rem; /* Raggio del bordo per il pulsante */
+  display: inline-block; /* Mostra il pulsante come elemento inline-block */
+}
+    .btn-primary:hover {
+      background-color: darkred; /* Colore quando si passa sopra */
+      border-color: darkred; /* Colore del bordo quando si passa sopra */
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="img/logo.png" alt="Logo">
+  </a>
+  <div class="navbar-center">
+    <span class="navbar-text">
+      <img src="img/titolo.png" alt="Titolo">
+    </span>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Menu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Orari</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Dove Siamo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contatti</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Orari di Apertura</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Giorno</th>
+          <th>Pranzo</th>
+          <th>Cena</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="bg-danger text-white">Lunedì</th>
+          <td class="red-text">X</td>
+          <td>18:00 - 22:00</td>
+        </tr>
+        <tr>
+          <th class="bg-danger text-white">Martedì</th>
+          <td class="red-text">X</td>
+          <td>18:00 - 22:00</td>
+        </tr>
+        <tr>
+          <th class="bg-danger text-white">Mercoledì</th>
+          <td>12:00 - 14:00</td>
+          <td>18:00 - 22:00</td>
+        </tr>
+        <tr>
+          <th class="bg-danger text-white">Giovedì</th>
+          <td>12:00 - 14:00</td>
+          <td>18:00 - 22:00</td>
+        </tr>
+        <tr>
+          <th class="bg-danger text-white">Venerdì</th>
+          <td>12:00 - 14:00</td>
+          <td>18:00 - 22:00</td>
+        </tr>
+        <tr>
+          <th class="bg-danger text-white">Sabato</th>
+          <td>12:00 - 14:00</td>
+          <td>18:00 - 22:00</td>
+        </tr>
+        <tr>
+          <th class="bg-danger text-white">Domenica</th>
+          <td>12:00 - 14:00</td>
+          <td>18:00 - 22:00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<hr class="hr hr-blurry" style="background-color: red;" />
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <!-- Card per i numeri di telefono -->
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Contatti</h4>
+            <p class="phone-number"><i class="fas fa-phone-alt"></i> <a href="tel:+0418222570">+041 822 2570</a></p>
+            <p class="phone-number"><i class="fas fa-phone-alt"></i> <a href="tel:+393454690469">+39 345 469 0469</a></p>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJmfI9UMfMfkcRi6S0FwOkTTQ" class="btn btn-primary rounded-pill">Inserisci una recensione</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <!-- Card per la mappa -->
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Dove Siamo</h4>
+            <!-- Mappa di Google Maps -->
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6330.259350260697!2d12.077369700716321!3d45.5529508540557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eccc7503df299%3A0x344da40317b4a48b!2sZeus%20Pizza!5e0!3m2!1sit!2sit!4v1722614914993!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer text-center">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="https://www.facebook.com/ZeusNoale/?locale=it_IT" role="button">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <!-- Instagram -->
+      <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/zeuspizzanoale/" role="button">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Logo -->
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="Logo">
+    </div>
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #c9302c;">
+    © 2024 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">ZeusPizzaNoale</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+</body>
+</html>
